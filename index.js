@@ -43,11 +43,11 @@ function getUser(username) {
   cards.querySelectorAll(".card, .not__found").forEach(elements => elements.remove());
 
   fetch(api + username)
-    .then(res => {
-      if (!res.ok) {
+    .then(response => {
+      if (!response.ok) {
         throw new Error("User topilmadi");
       }
-      return res.json();
+      return response.json();
     })
     .then(data => {
       loading.style.display = "none";
